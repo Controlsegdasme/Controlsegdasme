@@ -1,0 +1,1857 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Controlseg | Contabilidade e Corretagem de Seguros</title>
+
+    <meta name="description"
+          content="Controlseg - Contabilidade, apoio administrativo e corretagem de seguros em Aracaju, Sergipe.">
+
+    <meta name="keywords"
+          content="contabilidade Aracaju, contador Aracaju, Controlseg, contabilidade Sergipe, corretora de seguros">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        :root {
+            --primary: #0b3954;
+            --primary-dark: #07283b;
+            --secondary: #087e8b;
+            --accent: #18a999;
+            --light: #f4f8fa;
+            --text: #263238;
+            --muted: #6c757d;
+            --white: #ffffff;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: #ffffff;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: rgba(7, 40, 59, 0.97);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #fff !important;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-brand span {
+            color: #25c7b3;
+        }
+
+        .navbar .nav-link {
+            color: rgba(255,255,255,.85);
+            font-weight: 500;
+            margin-left: 12px;
+            transition: .3s;
+        }
+
+        .navbar .nav-link:hover {
+            color: #25c7b3;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 720px;
+            padding-top: 150px;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            background:
+                linear-gradient(120deg,
+                    rgba(7,40,59,.98),
+                    rgba(11,57,84,.94),
+                    rgba(8,126,139,.80)),
+                radial-gradient(circle at top right,
+                    rgba(37,199,179,.25),
+                    transparent 35%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 50%;
+            right: -150px;
+            top: -100px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px solid rgba(255,255,255,.05);
+            border-radius: 50%;
+            right: -230px;
+            top: -170px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .badge-custom {
+            display: inline-block;
+            padding: 9px 18px;
+            border-radius: 50px;
+            background: rgba(37,199,179,.15);
+            border: 1px solid rgba(37,199,179,.3);
+            color: #72f1df;
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.6rem);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #4de0cd;
+        }
+
+        .hero p {
+            color: rgba(255,255,255,.82);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 650px;
+            margin: 25px 0 35px;
+        }
+
+        .btn-primary-custom {
+            background: var(--accent);
+            border: none;
+            color: #fff;
+            padding: 14px 27px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: .3s;
+        }
+
+        .btn-primary-custom:hover {
+            background: #128c7d;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            border: 1px solid rgba(255,255,255,.4);
+            color: #fff;
+            padding: 13px 27px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-outline-custom:hover {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats {
+            margin-top: -65px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 12px 35px rgba(0,0,0,.08);
+            height: 100%;
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .stat-card h3 {
+            margin-top: 12px;
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .stat-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title .small-title {
+            color: var(--secondary);
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: .8rem;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            max-width: 700px;
+            margin: 15px auto 0;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,.05);
+            height: 100%;
+        }
+
+        .about-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(8,126,139,.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            font-size: 1.8rem;
+            margin-bottom: 22px;
+        }
+
+        .about-box h3 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            color: #68757d;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .service-card {
+            border: 1px solid #e8eef1;
+            border-radius: 16px;
+            padding: 35px 30px;
+            height: 100%;
+            transition: .3s;
+            background: #fff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(11,57,84,.1);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .service-card h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .service-card li {
+            margin-bottom: 10px;
+            color: #59666d;
+        }
+
+        .service-card li i {
+            color: var(--accent);
+            margin-right: 7px;
+        }
+
+        /* =========================
+           DIFFERENTIALS
+        ========================= */
+
+        .differentials {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .differentials .section-title h2 {
+            color: #fff;
+        }
+
+        .differentials .section-title p {
+            color: rgba(255,255,255,.7);
+        }
+
+        .differential-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .differential-icon {
+            min-width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: rgba(37,199,179,.12);
+            color: #45dfcb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .differential-item h5 {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .differential-item p {
+            color: rgba(255,255,255,.65);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CNAES
+        ========================= */
+
+        .cnae-card {
+            background: #fff;
+            border: 1px solid #e6ecef;
+            border-radius: 14px;
+            padding: 25px;
+            height: 100%;
+        }
+
+        .cnae-number {
+            display: inline-block;
+            background: rgba(8,126,139,.1);
+            color: var(--secondary);
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: .8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cnae-card h5 {
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        /* =========================
+           COMPANY DATA
+        ========================= */
+
+        .company-data {
+            background: var(--light);
+        }
+
+        .data-table {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .data-row {
+            display: flex;
+            border-bottom: 1px solid #edf1f3;
+            padding: 18px 25px;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            width: 40%;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .data-value {
+            width: 60%;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            background:
+                linear-gradient(120deg, var(--secondary), var(--primary));
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .cta p {
+            max-width: 650px;
+            margin: 20px auto 30px;
+            color: rgba(255,255,255,.8);
+            line-height: 1.8;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid #e8edef;
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 8px 30px rgba(0,0,0,.04);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            min-width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: rgba(8,126,139,.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-item h6 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        .map-button {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .map-button:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #061e2c;
+            color: rgba(255,255,255,.65);
+            padding: 55px 0 25px;
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        footer p {
+            line-height: 1.8;
+        }
+
+        .footer-brand {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .footer-brand span {
+            color: #36d8c3;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,.6);
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .footer-links a:hover {
+            color: #36d8c3;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.07);
+            color: #fff;
+            border-radius: 8px;
+            margin-right: 7px;
+            text-decoration: none;
+            transition: .3s;
+        }
+
+        .social-link:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.08);
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: .85rem;
+        }
+
+        /* =========================
+           WHATSAPP FLOAT
+        ========================= */
+
+        .whatsapp {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0,0,0,.2);
+            z-index: 999;
+            transition: .3s;
+        }
+
+        .whatsapp:hover {
+            color: #fff;
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .navbar .nav-link {
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 130px;
+            }
+
+            .stats {
+                margin-top: 0;
+                padding-top: 30px;
+            }
+
+            .data-label {
+                width: 45%;
+            }
+
+            .data-value {
+                width: 55%;
+            }
+        }
+
+        @media (max-width: 575px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .data-row {
+                display: block;
+            }
+
+            .data-label,
+            .data-value {
+                width: 100%;
+            }
+
+            .data-value {
+                margin-top: 5px;
+            }
+
+            .whatsapp {
+                right: 18px;
+                bottom: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#inicio">
+            Control<span>seg</span>
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicos">Serviços</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#empresa">Empresa</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+    <div class="container hero-content">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <span class="badge-custom">
+                    <i class="bi bi-shield-check me-2"></i>
+                    Contabilidade • Administração • Seguros
+                </span>
+
+                <h1>
+                    Gestão contábil para
+                    <span>empresas que querem crescer.</span>
+                </h1>
+
+                <p>
+                    Soluções em contabilidade, apoio administrativo e corretagem
+                    de seguros para ajudar sua empresa a manter organização,
+                    segurança e tranquilidade para tomar decisões.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+
+                    <a href="#contato"
+                       class="btn btn-primary-custom">
+                        <i class="bi bi-chat-dots me-2"></i>
+                        Fale conosco
+                    </a>
+
+                    <a href="#servicos"
+                       class="btn btn-outline-custom">
+                        Conheça nossos serviços
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STATS
+===================================================== -->
+
+<div class="stats">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+
+                    <i class="bi bi-calendar-check"></i>
+
+                    <h3>2016</h3>
+
+                    <p>Fundação da empresa</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+
+                    <i class="bi bi-patch-check"></i>
+
+                    <h3>Ativa</h3>
+
+                    <p>Situação cadastral</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+
+                    <i class="bi bi-building"></i>
+
+                    <h3>ME</h3>
+
+                    <p>Microempresa</p>
+
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="stat-card">
+
+                    <i class="bi bi-geo-alt"></i>
+
+                    <h3>Aracaju</h3>
+
+                    <p>Sergipe</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<section class="about" id="sobre">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">Sobre a Controlseg</span>
+
+            <h2>Contabilidade com organização e confiança</h2>
+
+            <p>
+                A Controlseg atua em Aracaju, Sergipe, oferecendo serviços
+                de contabilidade, apoio administrativo e corretagem de seguros.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="about-box">
+
+                    <div class="about-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+
+                    <h3>Experiência para sua empresa</h3>
+
+                    <p>
+                        Fundada em 20 de abril de 2016, a Controlseg possui
+                        atuação voltada à prestação de serviços contábeis e
+                        soluções complementares para empresas e profissionais.
+                    </p>
+
+                    <p>
+                        Nosso objetivo é facilitar a rotina empresarial,
+                        proporcionando organização das informações e suporte
+                        para uma gestão mais eficiente.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="about-box">
+
+                    <div class="about-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+
+                    <h3>Mais tranquilidade para administrar</h3>
+
+                    <p>
+                        Uma boa organização contábil permite que o empresário
+                        tenha informações importantes para acompanhar seu
+                        negócio e planejar seus próximos passos.
+                    </p>
+
+                    <p>
+                        A Controlseg reúne contabilidade, serviços de apoio
+                        administrativo e corretagem de seguros em uma mesma
+                        empresa.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVIÇOS
+===================================================== -->
+
+<section id="servicos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">O que fazemos</span>
+
+            <h2>Nossos serviços</h2>
+
+            <p>
+                Soluções pensadas para apoiar empresas em diferentes
+                necessidades administrativas, contábeis e de proteção.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Serviço 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-calculator"></i>
+                    </div>
+
+                    <h4>Contabilidade</h4>
+
+                    <p>
+                        Serviços relacionados às atividades de contabilidade,
+                        contribuindo para a organização das informações
+                        financeiras e empresariais.
+                    </p>
+
+                    <ul>
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Rotinas contábeis
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Organização financeira
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Informações para gestão
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- Serviço 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-folder2-open"></i>
+                    </div>
+
+                    <h4>Apoio Administrativo</h4>
+
+                    <p>
+                        Serviços combinados de escritório e apoio administrativo
+                        para auxiliar na organização das atividades empresariais.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Organização de documentos
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Apoio de escritório
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Rotinas administrativas
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <!-- Serviço 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+
+                    <h4>Corretagem de Seguros</h4>
+
+                    <p>
+                        Atuação como corretora e agente de seguros, incluindo
+                        seguros, planos de previdência complementar e saúde.
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Seguros
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Previdência complementar
+                        </li>
+
+                        <li>
+                            <i class="bi bi-check-circle-fill"></i>
+                            Planos de saúde
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DIFERENCIAIS
+===================================================== -->
+
+<section class="differentials">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">Por que contar conosco</span>
+
+            <h2>Uma estrutura pensada para facilitar</h2>
+
+            <p>
+                Organização, atendimento e diferentes soluções reunidas
+                para apoiar a rotina do seu negócio.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+
+                <div class="differential-item">
+
+                    <div class="differential-icon">
+                        <i class="bi bi-person-check"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Atendimento próximo</h5>
+
+                        <p>
+                            Um relacionamento profissional baseado em
+                            comunicação e acompanhamento das necessidades
+                            da empresa.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="differential-item">
+
+                    <div class="differential-icon">
+                        <i class="bi bi-bar-chart-line"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Organização empresarial</h5>
+
+                        <p>
+                            Informações organizadas para ajudar na rotina
+                            administrativa e no acompanhamento do negócio.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <div class="differential-item">
+
+                    <div class="differential-icon">
+                        <i class="bi bi-layers"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Soluções integradas</h5>
+
+                        <p>
+                            Contabilidade, apoio administrativo e corretagem
+                            de seguros reunidos em uma mesma estrutura.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="differential-item">
+
+                    <div class="differential-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Segurança e responsabilidade</h5>
+
+                        <p>
+                            Serviços voltados à organização e ao suporte
+                            das atividades empresariais.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CNAES
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">Atividades econômicas</span>
+
+            <h2>Atividades da empresa</h2>
+
+            <p>
+                Conheça as atividades econômicas cadastradas para a Controlseg.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-number">
+                        CNAE PRINCIPAL
+                    </span>
+
+                    <h5>
+                        69.20-6-01
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        Atividades de contabilidade
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-number">
+                        CNAE SECUNDÁRIO
+                    </span>
+
+                    <h5>
+                        82.11-3-00
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        Serviços combinados de escritório
+                        e apoio administrativo
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4">
+
+                <div class="cnae-card">
+
+                    <span class="cnae-number">
+                        CNAE SECUNDÁRIO
+                    </span>
+
+                    <h5>
+                        66.22-3-00
+                    </h5>
+
+                    <p class="text-muted mb-0">
+                        Corretores e agentes de seguros,
+                        de planos de previdência complementar
+                        e de saúde
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DADOS DA EMPRESA
+===================================================== -->
+
+<section class="company-data" id="empresa">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">Informações cadastrais</span>
+
+            <h2>Dados da Controlseg</h2>
+
+            <p>
+                Informações cadastrais e empresariais fornecidas pela empresa.
+            </p>
+
+        </div>
+
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <div class="data-table">
+
+                    <div class="data-row">
+                        <div class="data-label">Nome Fantasia</div>
+                        <div class="data-value">Controlseg</div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Razão Social</div>
+                        <div class="data-value">
+                            B Dantas Junior Contabilidade Corretagem de Seguros
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">CNPJ</div>
+                        <div class="data-value">
+                            24.642.466/0001-59
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">CRC</div>
+                        <div class="data-value">
+                            SE-000672/O
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Data de abertura</div>
+                        <div class="data-value">
+                            20/04/2016
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Porte</div>
+                        <div class="data-value">
+                            Micro Empresa
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Natureza Jurídica</div>
+                        <div class="data-value">
+                            Empresário (Individual)
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Regime Tributário</div>
+                        <div class="data-value">
+                            Simples Nacional
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Capital Social</div>
+                        <div class="data-value">
+                            R$ 25.000,00
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Tipo</div>
+                        <div class="data-value">
+                            Matriz
+                        </div>
+                    </div>
+
+                    <div class="data-row">
+                        <div class="data-label">Situação cadastral</div>
+                        <div class="data-value">
+                            <i class="bi bi-check-circle-fill text-success me-1"></i>
+                            Ativa
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Precisa de apoio para sua empresa?
+        </h2>
+
+        <p>
+            Entre em contato com a Controlseg e conheça nossas soluções
+            em contabilidade, apoio administrativo e corretagem de seguros.
+        </p>
+
+        <a href="https://wa.me/5579999077063"
+           target="_blank"
+           class="btn btn-light btn-lg px-4">
+
+            <i class="bi bi-whatsapp me-2"></i>
+            Falar pelo WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTATO
+===================================================== -->
+
+<section id="contato">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span class="small-title">Entre em contato</span>
+
+            <h2>Estamos à disposição</h2>
+
+            <p>
+                Utilize um dos canais abaixo para falar com a Controlseg.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- CONTATOS -->
+
+            <div class="col-lg-6">
+
+                <div class="contact-card">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>E-mail</h6>
+
+                            <a href="mailto:renata@novadvocaci.site">
+                                renata@novadvocaci.site
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>WhatsApp</h6>
+
+                            <a href="https://wa.me/5579999077063"
+                               target="_blank">
+
+                                (79) 99907-7063
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Telefone</h6>
+
+                            <a href="tel:+557932436222">
+
+                                (79) 3243-6222
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Endereço</h6>
+
+                            <p>
+                                Avenida Professor Acrisio Cruz, 104<br>
+                                Loja 01 — Salgado Filho<br>
+                                Aracaju — SE<br>
+                                CEP 49020-210
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Avenida+Professor+Acrisio+Cruz,+104,+Aracaju,+SE"
+                        target="_blank"
+                        class="map-button">
+
+                        <i class="bi bi-map me-2"></i>
+                        Ver localização no Google Maps
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CORRESPONDÊNCIA -->
+
+            <div class="col-lg-6">
+
+                <div class="contact-card">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Correspondência</h6>
+
+                            <p>
+                                <strong>
+                                    Controlseg B Dantas Junior
+                                    Contabilidade Corretagem de Seguros
+                                </strong>
+                                <br><br>
+
+                                Avenida Professor Acrisio Cruz, 104<br>
+                                Loja 01<br>
+                                Salgado Filho<br>
+                                Aracaju — SE<br>
+                                49020-210
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <hr class="my-4">
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <h6>Atendimento</h6>
+
+                            <p>
+                                Entre em contato através do telefone,
+                                WhatsApp ou e-mail para obter informações
+                                sobre nossos serviços.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <a href="mailto:renata@novadvocaci.site"
+                           class="btn btn-primary-custom">
+
+                            <i class="bi bi-envelope me-2"></i>
+                            Enviar e-mail
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <div class="col-lg-5">
+
+                <div class="footer-brand">
+                    Control<span>seg</span>
+                </div>
+
+                <p class="mt-3">
+                    B Dantas Junior Contabilidade Corretagem de Seguros.
+                    Soluções em contabilidade, apoio administrativo
+                    e corretagem de seguros.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="https://wa.me/5579999077063"
+                       target="_blank"
+                       class="social-link"
+                       title="WhatsApp">
+
+                        <i class="bi bi-whatsapp"></i>
+
+                    </a>
+
+                    <a href="mailto:renata@novadvocaci.site"
+                       class="social-link"
+                       title="E-mail">
+
+                        <i class="bi bi-envelope"></i>
+
+                    </a>
+
+                    <a href="tel:+5579999077063"
+                       class="social-link"
+                       title="Telefone">
+
+                        <i class="bi bi-telephone"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5>Links rápidos</h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+
+                    <li>
+                        <a href="#sobre">Sobre nós</a>
+                    </li>
+
+                    <li>
+                        <a href="#servicos">Serviços</a>
+                    </li>
+
+                    <li>
+                        <a href="#empresa">Dados da empresa</a>
+                    </li>
+
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <h5>Informações</h5>
+
+                <p class="mb-2">
+                    <i class="bi bi-building me-2"></i>
+                    CNPJ: 24.642.466/0001-59
+                </p>
+
+                <p class="mb-2">
+                    <i class="bi bi-award me-2"></i>
+                    CRC: SE-000672/O
+                </p>
+
+                <p class="mb-2">
+                    <i class="bi bi-geo-alt me-2"></i>
+                    Aracaju — Sergipe
+                </p>
+
+                <p>
+                    <i class="bi bi-check-circle me-2"></i>
+                    Situação: Ativa
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright text-center">
+
+            © 2026 Controlseg —
+            B Dantas Junior Contabilidade Corretagem de Seguros.
+            Todos os direitos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     WHATSAPP FLUTUANTE
+===================================================== -->
+
+<a href="https://wa.me/5579999077063"
+   target="_blank"
+   class="whatsapp"
+   title="Falar pelo WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+```
